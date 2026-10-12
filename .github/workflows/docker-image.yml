@@ -29,6 +29,7 @@ jobs:
           context: ./STUDENTAPI-SPRINGBOOT
           file: ./STUDENTAPI-SPRINGBOOT/backend.Dockerfile
           push: true
+          platforms: linux/amd64,linux/arm64
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/docker-git-actions-backend:latest
 
       - name: Build and push frontend image
@@ -37,4 +38,5 @@ jobs:
           context: ./STUDENTAPI-REACT
           file: ./STUDENTAPI-REACT/frontend.Dockerfile
           push: true
+          platforms: linux/amd64,linux/arm64
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/docker-git-actions-frontend:latest
